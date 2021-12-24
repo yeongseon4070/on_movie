@@ -28,24 +28,20 @@ const APP = () => {
         <div>
             {onmine.map(onon => (
                 <div>
-                    <Card
-                    >
+                    <Card key={onon.id}>
                         <CardBody>
                             <CardTitle tag="h5">
-                                Card title
+                                {onon.name}
                             </CardTitle>
                             <CardSubtitle
                                 className="mb-2 text-muted"
                                 tag="h6"
                             >
-                                Card subtitle
+                                {onon.first_air_date}
                             </CardSubtitle>
                             <CardText>
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                                {onon.overview}
                             </CardText>
-                            <Button>
-                                Button
-                            </Button>
                         </CardBody>
                     </Card>
                 </div>
