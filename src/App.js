@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button} from "reactstrap"
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button, row, col } from "reactstrap"
 
 //{}안에는 함수값들이 들아간다 유저스테이트를 선언해준다.
 //3단계에서는 useEffect를 선언해준다.
@@ -26,26 +26,33 @@ const APP = () => {
 
     return (
         <div>
-            {onmine.map(onon => (
-                <div>
-                    <Card key={onon.id}>
-                        <CardBody>
-                            <CardTitle tag="h5">
-                                {onon.name}
-                            </CardTitle>
-                            <CardSubtitle
-                                className="mb-2 text-muted"
-                                tag="h6"
+            <div className={"container"}>
+                <div className={"row"}>
+                    {onmine.map(onon => (
+                        <div className={"col"}>
+                            <Card
                             >
-                                {onon.first_air_date}
-                            </CardSubtitle>
-                            <CardText>
-                                {onon.overview}
-                            </CardText>
-                        </CardBody>
-                    </Card>
+                                <CardBody>
+                                    <CardTitle tag="h5">
+                                        {onon.origin_country}
+                                    </CardTitle>
+                                    <CardSubtitle
+                                        className="mb-2 text-muted"
+                                        tag="h6"
+                                    >
+                                        {onon.name}
+                                    </CardSubtitle>
+                                    <CardText>
+                                        {onon.overview}
+                                    </CardText>
+
+                                </CardBody>
+                            </Card>
+                        </div>
+                    ))}
                 </div>
-                ))}
+            </div>
+
             {/*여러개 다수의 정보를 뿌려주는 map 함수를 사용하여 데이터를 뿌려준다는 함수.*/}
             {/*데이터의 값들을 보고 이름과, 아이디를 뿌려준다는 명령어를 선언하였다.*/}
             {/*해당 함수의 데이터가 몇개인가에 대한 부분을 뿌려주는 함수 선언*/}
