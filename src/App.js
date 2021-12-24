@@ -9,7 +9,7 @@ const APP = () => {
     //표시될 콘텐츠는 임의로 입력해준다.
 
     useEffect(() => {
-        console, log("on")
+        console. log("onhi")
     },[])
 
     return (
