@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import "./App.css"
 import axios from "axios";
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button} from "reactstrap"
+
 //{}안에는 함수값들이 들아간다 유저스테이트를 선언해준다.
 //3단계에서는 useEffect를 선언해준다.
 
@@ -26,10 +27,28 @@ const APP = () => {
     return (
         <div>
             {onmine.map(onon => (
-                <h1>
-                    {onon.id}
-                    {onon.name}
-                </h1>
+                <div>
+                    <Card
+                    >
+                        <CardBody>
+                            <CardTitle tag="h5">
+                                Card title
+                            </CardTitle>
+                            <CardSubtitle
+                                className="mb-2 text-muted"
+                                tag="h6"
+                            >
+                                Card subtitle
+                            </CardSubtitle>
+                            <CardText>
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </CardText>
+                            <Button>
+                                Button
+                            </Button>
+                        </CardBody>
+                    </Card>
+                </div>
                 ))}
             {/*여러개 다수의 정보를 뿌려주는 map 함수를 사용하여 데이터를 뿌려준다는 함수.*/}
             {/*데이터의 값들을 보고 이름과, 아이디를 뿌려준다는 명령어를 선언하였다.*/}
