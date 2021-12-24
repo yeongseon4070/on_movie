@@ -4,18 +4,21 @@ import "./App.css"
 //3단계에서는 useEffect를 선언해준다.
 
 const APP = () => {
-    const [onmine, setOnmine] = useState([])
+    const [onmine, setOnmine] = useState("")
     //유저스테이트 값들의 함수 이름들과 명칭과 텍스트 드으이 콘텐츠 들을 입력해준다.
     //표시될 콘텐츠는 임의로 입력해준다.
 
     useEffect(() => {
-        console. log("onhi")
+        setTimeout(() => {
+            setOnmine("행복한 하루")
+        }, 3000)
     },[])
+    //3초위에 해당 문구를 노출하겠다는 명령어 입니다.
 
     return (
         <div>
           <h1>
-            {onmine. length}
+            {onmine}
               {/*해당 함수의 데이터가 몇개인가에 대한 부분을 뿌려주는 함수 선언*/}
           </h1>
         </div>
