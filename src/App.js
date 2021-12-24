@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button, row, col } from "reactstrap"
+import {Card, CardBody, CardTitle, CardSubtitle, CardText, Row, Col, Container} from "reactstrap"
 
 //{}안에는 함수값들이 들아간다 유저스테이트를 선언해준다.
 //3단계에서는 useEffect를 선언해준다.
@@ -26,10 +26,10 @@ const APP = () => {
 
     return (
         <div>
-            <div className={"container"}>
-                <div className={"row"}>
+            <Container>
+                <Row>
                     {onmine.map(onon => (
-                        <div className={"col"}>
+                        <Col>
                             <Card
                             >
                                 <CardBody>
@@ -48,10 +48,10 @@ const APP = () => {
 
                                 </CardBody>
                             </Card>
-                        </div>
+                        </Col>
                     ))}
-                </div>
-            </div>
+                </Row>
+            </Container>
 
             {/*여러개 다수의 정보를 뿌려주는 map 함수를 사용하여 데이터를 뿌려준다는 함수.*/}
             {/*데이터의 값들을 보고 이름과, 아이디를 뿌려준다는 명령어를 선언하였다.*/}
